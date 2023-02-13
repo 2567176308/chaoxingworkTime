@@ -14,7 +14,7 @@
     python selenium_chaoxing.py
     2、安装FireFox浏览器
     3、https://github.com/mozilla/geckodriver/releases下载geckodriver,不同操作系统下载对应新驱动，解压后将原有驱动替换即可
-    
+    直接进入到dist\selenium_chaoxing运行selenium_chaoxing.exe
 ### 存在问题
     本爬虫还不够完善，欢迎大家指导
     可以直接修改源码
