@@ -1,28 +1,9 @@
 import re
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
 from lxml import etree
 from selenium.webdriver.firefox.options import Options
-import yaml
-import getpass
-import curses
-
-class Scroll_wheel():
-
-    def scroll(self,driver):
-        original_top = 0
-        while True:
-            # 循环下拉滚动条
-            driver.execute_script("window.scrollBy(0,300)")
-            time.sleep(0.5)
-            # 获取当前滚动条距离顶部的距离
-            check_height = driver.execute_script(
-                "return document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;")
-            # 如果滚动条距离上面的距离不再改变，也就是滚动后的距离和之前距离顶部的位置没有改变，说明到达最下方，跳出循环
-            if check_height == original_top:
-                break
-            original_top = check_height
+import wheel
 ##搜寻
 class SerachWork():
     def search(self,id,pwd):
@@ -56,7 +37,7 @@ class SerachWork():
         except:
             print('请检查账号密码是否无误！')
         # 实例化一个滚轮对象
-        scroll = Scroll_wheel()
+        scroll = wheel.Scroll_wheel()
         scroll.scroll(driver=driver)
 
         page_text = driver.page_source
@@ -113,58 +94,3 @@ class SerachWork():
         # 退出
         print('完成，记得按时完成作业哦！！！')
         driver.quit()
-# 存入config.yaml
-def save_id_pwd(id,pwd, file='config.yaml'):
-    data = {}
-    data['id'] = id
-    data['pwd'] = pwd
-    
-    with open(file, 'w') as outfile:
-        yaml.dump(data, outfile, default_flow_style=False)
-# 从config.yaml中取出
-
-def load_data(file='config.yaml'):
-    with open(file, 'r') as stream:
-        data = yaml.safe_load(stream)
-        return data['id'], data['pwd']
-# 进入动画
-def animation(stdscr):
-    curses.curs_set(0)
-    stdscr.clear()
-    height, width = stdscr.getmaxyx()
-    x = width // 2
-    y = height // 2
-    for i in range(10, 0, -1):
-        stdscr.clear()
-        stdscr.addstr(y, x - 5, "Loading...")
-        stdscr.addstr(y + 1, x - i, "*" * (2 * i - 1))
-        stdscr.refresh()
-        time.sleep(0.1)
-    stdscr.clear()
-    stdscr.addstr(y, x - 5, "Loading complete!")
-    stdscr.refresh()
-    time.sleep(2)
-
-def switch_choice(argument):
-    start_time = time.time()
-    while time.time() - start_time < 5:
-        argument = input("使用新密码请输入1，使用上次密码请输入2:\n")
-        if argument in ["1","2"]:
-            break
-    if argument == "1":
-        id = input("请输入电话号码：")
-        pwd = getpass.getpass("请输入密码(不会显示密码)：")
-        save_id_pwd(id=id,pwd=pwd)
-        work = SerachWork()
-        work.search(id=id,pwd=pwd)
-        return
-
-    elif argument == "2":
-        id,pwd = load_data()
-        work = SerachWork()
-        work.search(id=id,pwd=pwd)
-        return
-if __name__ == '__main__':
-    curses.wrapper(animation)
-    argument = ""
-    switch_choice(argument=argument)
