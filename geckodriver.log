@@ -959,8 +959,9 @@ DevTools listening on ws://127.0.0.1:63962/devtools/browser/f724b079-c594-43ee-8
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://passport2.chaoxing.com."
 JavaScript error: https://pc.chaoxing.com/res/js/jquery-1.7.1.min.js, line 2: SecurityError: Permission denied to access property "nodeType" on cross-origin object
 JavaScript warning: http://mooc1-2.chaoxing.com/js/common/jquery.min.js, line 4: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
-1676368703421	geckodriver	INFO	Listening on 127.0.0.1:64800
-1676368706496	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "64801" "-no-remote" "-profile" "C:\\Users\\李世恩\\AppData\\Local\\Temp\\rust_mozprofileLiehGI"
+console.error: Region.sys.mjs: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 764))
+console.error: Region.sys.mjs: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 416))
+C:\\Users\\李世恩\\AppData\\Local\\Temp\\rust_mozprofileLiehGI"
 *** You are running in headless mode.
 1676368706985	Marionette	INFO	Marionette enabled
 Dynamically enable window occlusion 0
@@ -1269,3 +1270,23 @@ JavaScript warning: https://mooc1.chaoxing.com/js/common/jquery.min.js, line 4: 
 1676370089689	Marionette	INFO	Stopped listening on port 54291
 Dynamically enable window occlusion 1
 !!! error running onStopped callback: TypeError: callback is not a function
+1676384571561	geckodriver	INFO	Listening on 127.0.0.1:60494
+1676384574598	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "60495" "-no-remote" "-profile" "C:\\Users\\李世恩\\AppData\\Local\\Temp\\rust_mozprofileIhiTJN"
+*** You are running in headless mode.
+1676384575040	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1676384575046	Marionette	INFO	Listening on port 60503
+WebDriver BiDi listening on ws://127.0.0.1:60495
+1676384575176	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\\u674E\u4E16\u6069\\AppData\\Local\\Temp\\rust_mozprofileIhiTJN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60495/devtools/browser/d5989637-fbce-44f6-936a-c840a4fe4f72
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://passport2.chaoxing.com."
+JavaScript error: https://pc.chaoxing.com/res/js/jquery-1.7.1.min.js, line 2: SecurityError: Permission denied to access property "nodeType" on cross-origin object
+JavaScript warning: http://mooc1-2.chaoxing.com/js/common/jquery.min.js, line 4: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://mooc1.chaoxing.com/js/common/jquery.min.js, line 4: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://mooc1.chaoxing.com/js/common/jquery.min.js, line 4: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://mooc1.chaoxing.com/js/common/jquery.min.js, line 4: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://mooc1.chaoxing.com/js/common/jquery.min.js, line 4: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1676384641781	Marionette	INFO	Stopped listening on port 60503
+Dynamically enable window occlusion 1

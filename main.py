@@ -35,7 +35,8 @@ def switch_choice(argument):
 if __name__ == '__main__':
     # animat = animation.Animation()
     # animat.animation()
-    curses.wrapper(animation)
+    # 没有curses包就注释掉就好，不影响程序
+    # curses.wrapper(animation)
     os.system('cls')
     argument = ""
     switch_choice(argument=argument)

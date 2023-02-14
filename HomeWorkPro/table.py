@@ -12,7 +12,6 @@ data = [{"name": "Alice", "age": 25, "gender": "female"},
         {"name": "Bob", "age": 30, "gender": "male"},
         {"name": "Charlie", "age": 35, "gender": "male"}]
 
-
 def TableFunny():
 
     # 输出表格和图案    
