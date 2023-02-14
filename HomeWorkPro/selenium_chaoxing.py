@@ -3,7 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from lxml import etree
 from selenium.webdriver.firefox.options import Options
-import wheel
+from HomeWorkPro import wheel
+from HomeWorkPro.table import TableFunc,TableFunny
 ##搜寻
 class SerachWork():
     def search(self,id,pwd):
@@ -13,7 +14,7 @@ class SerachWork():
         # 开启无头模式
         options_ff.add_argument('--headless')#注销该行即显示浏览器模拟登录
 
-        driver = webdriver.Firefox(executable_path='geckodriver.exe',options=options_ff)
+        driver = webdriver.Firefox(executable_path='./utils/geckodriver.exe',options=options_ff)
 
         # 对目标网站发起请求
 
@@ -32,7 +33,7 @@ class SerachWork():
             pass
         try:
             driver.switch_to.frame('frame_content')
-            print('正在搜寻...')
+            print('验证成功...\n正在搜寻...')
 
         except:
             print('请检查账号密码是否无误！')
@@ -46,6 +47,7 @@ class SerachWork():
 
         li_list = tree.xpath('//ul[@id="courseList"]/li')
         urls =[]
+        table = []
         # 请求每个页面
         for li in li_list:
             href = li.xpath('./div[@class="course-cover"]/a/@href')[0]
@@ -88,9 +90,11 @@ class SerachWork():
                             '作业':title,
                             '时间':time
                         }
-                        print(parm)
+                        table.append(parm)
                         # print('科目:'+name[0])
                         # print("<"+title[0]+'> :'+time[0])
         # 退出
+        TableFunny()
+        TableFunc(table)
         print('完成，记得按时完成作业哦！！！')
         driver.quit()
