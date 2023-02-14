@@ -26,10 +26,12 @@ git clone git@github.com:2567176308/chaoxingworkTime.git
 
 <strong><em>在获取原码的前提下</em></strong>
 
-1、安装环境请看<em>第四步</em>
+1、安装环境请看[<em>第四步</em>](#jump)
+
 2、安装FireFox浏览器utils文件中有firefox安装包，默认安装即可
-3、请移步这里[geckodriver](https://github.com/mozilla/geckodriver/releases)下载geckodriver,不同操作系统下载对应新驱动，解压后将原有驱动(我的firefox是108版本区别不太大是可以正常运行的)替换即可
-4、进入chaoxing目录输入``` python main.py```
+3、请移步这里[geckodriver](https://github.com/mozilla/geckodriver/releases)下载geckodriver,不同操作系统下载对应新驱动，解压后将原有驱动替换即可
+
+3、输入``` python main.py```
 
 
 
@@ -41,7 +43,7 @@ git clone git@github.com:2567176308/chaoxingworkTime.git
 
 ![run](./image/run.jpg)
 
-### 4、环境
+### <span id="jump">4、环境</span>
 
 ```py
 Python3.10
